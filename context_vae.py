@@ -125,7 +125,6 @@ class ContextVAE(torch.nn.Module):
                     n_params = 0
                     for m in self.backbone.parameters():
                         n_params += torch.prod(torch.LongTensor(list(m.size()))).item()
-                    print("MAP PARAMS:", n_params)
                     if "res" in map_model_name:
                         self.feature_dim = self.backbone.fc.in_features
                         self.backbone.fc = torch.nn.Identity()
