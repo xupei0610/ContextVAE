@@ -18,7 +18,7 @@ train_dataloader = dict(
     map_size=MAP_SIZE,
     pred_horizon=PRED_HORIZON,
     ob_radius=OB_RADIUS,
-    inclusive_groups=["CHALLENGE4"],
+    inclusive_groups=["CHALLENGE"],
     batch_size=128,
     batches_per_epoch=200
 )
@@ -28,7 +28,7 @@ test_dataloader = dict(
     map_size=MAP_SIZE,
     pred_horizon=PRED_HORIZON,
     ob_radius=OB_RADIUS,
-    inclusive_groups=["CHALLENGE4"],
+    inclusive_groups=["CHALLENGE"],
     batch_size=512
 )
 

@@ -63,15 +63,6 @@ def get_semantic_map(map_name, x_min, x_max, y_min, y_max, map_scale):
     ])  # left upper corner is the origin of image
     semantic_map = semantic_map[:,::-1,:] # reverse rows, as nuscenes count rows from bottom to top.
     
-
-
-    # import matplotlib.pyplot as plt
-    # mask = scene_map.get_map_mask((731.2960, 1478.3240, 300, 300), 0., ["lane", "road_segment", "drivable_area", "road_divider", "lane_divider", "ped_crossing"], (300, 300))
-    # semantic_map = (np.stack((np.max(mask[:3], axis=0)*0.75+mask[5]*0.25, mask[3], mask[4]), axis=-1)*255.0).astype(np.uint8)
-    # semantic_map[150, 150] = 255
-    # plt.imsave("m1.png", semantic_map)
-    # exit()
-
     return semantic_map, H
 
 def generate(path, map_name, tokens):
@@ -141,11 +132,7 @@ def generate(path, map_name, tokens):
                 
                 data[len(data)] = {
                     'frame_id': fid,
-                    # 'type': agent_type,
-                    'node_id': inst,
-                    # 'x': x,
-                    # 'y': y,
-                    # 'heading': heading,
+                    'node_id': inst
                 }
                 x_max = max(x_max, x)
                 y_max = max(y_max, y)
@@ -172,11 +159,7 @@ def generate(path, map_name, tokens):
         
             data[len(data)] = {
                 'frame_id': fid,
-                # 'type': agent_type,
-                'node_id': inst,
-                # 'x': x,
-                # 'y': y,
-                # 'heading': heading,
+                'node_id': inst
             }
             x_max = max(x_max, x)
             y_max = max(y_max, y)
@@ -199,7 +182,7 @@ def generate(path, map_name, tokens):
                         first_frame = min(first_frame, fid)
                         group = cat
                         if inst == target_inst:
-                            group = group + "/CHALLENGE4"
+                            group = group + "/CHALLENGE"
                         content.append("{} {} {} {} {} {}".format(fid, aid, px, py, yaw, group))
 
                 with open(os.path.join(path, "{}.txt".format(token)), "w") as f:
@@ -235,11 +218,6 @@ if __name__ == "__main__":
             task[scene_token][-1].append((instance_token, sample_token))
         for arg in task.values():
             args.append(arg)
-    
-    # for _ in args:
-    #     if _[0] == "d5d5fdcb11854f6f967b95b5be4825de_b68bfe651ac3443e846c5e75ec7fb4dd":
-    #         generate(*_)
-    # exit()
 
     M = dict()
     done = 0
