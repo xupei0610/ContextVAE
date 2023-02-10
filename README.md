@@ -64,8 +64,9 @@ To reproduce the results, please run
 
 We use distributed training for `Lyft` and `Waymo` datasets with 4 and 8 worker machines respectively. 
 (cf. https://pytorch.org/docs/stable/distributed.html for Pytorch distributed training.)
-See [scripts/README.md](scripts) for details of data preprocessing.
 All training was done with A100 GPUs for `Lyft` and `Waymo` datasets and a V100 GPU for `nuScenes`.
+
+See [scripts/README.md](scripts) for details of data preprocessing.
 
 We also provided our pre-trained models in [Release](https://github.com/xupei0610/ContextVAE/releases/). 
 To reproduce the testing results, please run
