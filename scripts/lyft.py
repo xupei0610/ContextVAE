@@ -184,7 +184,7 @@ if __name__ == "__main__":
             host = scene["host"]
             path = os.path.join(settings.target_folder, os.path.splitext(os.path.basename(zarr))[0])
             if settings.split > 1:
-                path = os.path.join(path, str(batch))
+                path = os.path.join(path, str(batch-1))
             if path not in subfolders: subfolders.append(path)
             args.append((dataset[basename], host, start_frame, end_frame, path))
 

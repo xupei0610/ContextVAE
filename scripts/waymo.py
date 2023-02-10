@@ -71,7 +71,7 @@ parser.add_argument("target_folder", type=str)
 parser.add_argument("--frameskip", type=int, default=2)
 parser.add_argument("--map_scale", type=int, default=1)
 parser.add_argument("--workers", type=int, default=None)
-parser.add_argument("--split", type=int, default=4)
+parser.add_argument("--split", type=int, default=8)
 settings = parser.parse_args()
 
 FRAMESKIP = settings.frameskip
@@ -247,8 +247,6 @@ def process(ith, dataset_file, path, map_path):
     dataset = dataset.with_options(options)
     dataset_name = os.path.basename(dataset_file)
 
-    # return sum(1 for _ in dataset)
-
     items = []
     dims = []
     for data in dataset:
@@ -267,7 +265,7 @@ def process(ith, dataset_file, path, map_path):
             slices[(ith+i)%len(slices)] += 1
         slices = np.cumsum(slices)
         fraction = [items[0 if i == 0 else slices[i-1]:e] for i, e in enumerate(slices)]
-        subfolder = [str(p) for p in range(1, settings.split+1)]
+        subfolder = [str(p) for p in range(settings.split)]
         for p in subfolder:
             os.makedirs(os.path.join(map_path, p, dataset_name+"_"+p), exist_ok=True)
     else:
@@ -327,7 +325,7 @@ if __name__ == "__main__":
         target_path.append(os.path.join(settings.target_folder, relpath))
         map_path.append(os.path.join(settings.target_folder, "map", relpath))
     if settings.split > 1:
-        for i in range(1, settings.split+1):
+        for i in range(settings.split):
             for folder in set(target_path):
                 os.makedirs(os.path.join(folder, str(i)), exist_ok=True)
             for folder in set(map_path):

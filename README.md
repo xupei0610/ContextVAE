@@ -33,32 +33,32 @@ To reproduce the results, please run
     
     # Lyft
     $ python main.py \
-        --train <data_dir>/train/1 --test <data_dir>/validate/1 --map_dir <data_dir>/map \
+        --train <data_dir>/train/0 --test <data_dir>/validate/0 --map_dir <data_dir>/map \
         --config config/lyft_train.py --ckpt <checkpoint_dir> \
         --rank 0 --workers 4
     $ python main.py \
-        --train <data_dir>/train/2 --test <data_dir>/validate/2 --map_dir <data_dir>/map \
+        --train <data_dir>/train/1 --test <data_dir>/validate/1 --map_dir <data_dir>/map \
         --config config/lyft_train.py --ckpt <checkpoint_dir> \
         --rank 1 --workers 4 --master_addr <master_addr>
     $ python main.py \
-        --train <data_dir>/train/3 --test <data_dir>/validate/3 --map_dir <data_dir>/map \
+        --train <data_dir>/train/2 --test <data_dir>/validate/2 --map_dir <data_dir>/map \
         --config config/lyft_train.py --ckpt <checkpoint_dir> \
         --rank 2 --workers 4 --master_addr <master_addr>
     $ python main.py \
-        --train <data_dir>/train/4 --test <data_dir>/validate/4 --map_dir <data_dir>/map \
+        --train <data_dir>/train/3 --test <data_dir>/validate/3 --map_dir <data_dir>/map \
         --config config/lyft_train.py --ckpt <checkpoint_dir> \
         --rank 3 --workers 4 --master_addr <master_addr>
     
     # Waymo
     $ python main.py \
-        --train <data_dir>/training/1 --map_dir <data_dir>/map/training/1 \
-        --test <data_dir>/validation/1  --test_map_dir <data_dir>/map/validation/1\
+        --train <data_dir>/training/0 --map_dir <data_dir>/map/training/0 \
+        --test <data_dir>/validation/0  --test_map_dir <data_dir>/map/validation/0\
         --config config/waymo_train.py --ckpt <checkpoint_dir> \
         --rank 0 --workers 8
     ...
     $ python main.py \
-        --train <data_dir>/training/8 --map_dir <data_dir>/map/training/8 \
-        --test <data_dir>/validation/8  --test_map_dir <data_dir>/map/validation/8\
+        --train <data_dir>/training/7 --map_dir <data_dir>/map/training/7 \
+        --test <data_dir>/validation/7  --test_map_dir <data_dir>/map/validation/7\
         --config config/waymo_train.py --ckpt <checkpoint_dir> \
         --rank 7 --workers 8 --master_addr <master_addr>
 
@@ -77,30 +77,30 @@ To reproduce the testing results, please run
     
     # Lyft
     $ python main.py \
-        --test <data_dir>/validate/1 --map_dir <data_dir>/map \
+        --test <data_dir>/validate/0 --map_dir <data_dir>/map \
         --config config/lyft_eval.py --ckpt models/lyft_res152 \
         --rank 0 --workers 4
     $ python main.py \
-        --test <data_dir>/validate/2 --map_dir <data_dir>/map \
+        --test <data_dir>/validate/1 --map_dir <data_dir>/map \
         --config config/lyft_eval.py --ckpt models/lyft_res152 \
         --rank 1 --workers 4 --master_addr <master_addr>
     $ python main.py \
-        --test <data_dir>/validate/3 --map_dir <data_dir>/map \
+        --test <data_dir>/validate/2 --map_dir <data_dir>/map \
         --config config/lyft_eval.py --ckpt models/lyft_res152 \
         --rank 2 --workers 4 --master_addr <master_addr>
     $ python main.py \
-        --test <data_dir>/validate/4 --map_dir <data_dir>/map \
+        --test <data_dir>/validate/3 --map_dir <data_dir>/map \
         --config config/lyft_eval.py --ckpt models/lyft_res152 \
         --rank 3 --workers 4 --master_addr <master_addr>
 
     # Waymo
     $ python main.py \
-        --test <data_dir>/validation/1 --map_dir <data_dir>/map/validation/1 \
+        --test <data_dir>/validation/0 --map_dir <data_dir>/map/validation/0 \
         --config config/waymo_eval.py --ckpt models/waymo_m2 \
         --rank 0 --workers 8
     ...
     $ python main.py \
-        --test <data_dir>/validation/8 --map_dir <data_dir>/map/validation/8 \
+        --test <data_dir>/validation/7 --map_dir <data_dir>/map/validation/7 \
         --config config/waymo_eval.py --ckpt models/waymo_m2 \
         --rank 7 --workers 8 --master_addr <master_addr>
 
