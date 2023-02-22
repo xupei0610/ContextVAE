@@ -25,6 +25,11 @@ Evaluate a trained model
         --config <eval_config_file> --ckpt <checkpoint_dir>
 
 
+### Data Preprocessing
+See [scripts/README.md](scripts) for details of data preprocessing.
+
+### Train from scratch
+
 We provide our configure files in `config` folder.
 To reproduce the results, please run
 
@@ -66,11 +71,14 @@ To reproduce the results, please run
 
 We use distributed training for `Lyft` and `Waymo` datasets with 4 and 8 worker machines respectively. 
 (cf. https://pytorch.org/docs/stable/distributed.html for Pytorch distributed training.)
+
 All training was done with A100 GPUs for `Lyft` and `Waymo` datasets and a V100 GPU for `nuScenes`.
 
-See [scripts/README.md](scripts) for details of data preprocessing.
+
+### Evaluation
 
 We also provided our pre-trained models in [Release](https://github.com/xupei0610/ContextVAE/releases/). 
+
 To reproduce the testing results, please run
 
     # nuScenes
