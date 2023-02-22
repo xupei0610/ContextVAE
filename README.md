@@ -1,5 +1,7 @@
 # Context-Aware Vehicle Trajectory Prediction with Social Attention and Timewise VAEs
 
+Official implementation for _**Context-Aware Vehicle Trajectory Prediction with Social Attention and Timewise VAEs**_. [[arXiv](https://arxiv.org/abs/2302.10873)]
+
 ## Dependencies
 - Pytorch 1.11
 - Numpy 1.21
