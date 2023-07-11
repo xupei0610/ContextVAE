@@ -2,6 +2,9 @@
 
 Official implementation for _**Context-Aware Timewise VAEs for Real-Time Vehicle Trajectory Prediction**_. [[arXiv](https://arxiv.org/abs/2302.10873)][[YouTube](https://www.youtube.com/watch?v=wg6laeYpnW8)]
 
+
+![](https://pei-xu.github.io/projects/ContextVAE/teaser.png)
+
 ## Dependencies
 - Pytorch 1.11
 - Numpy 1.21
