@@ -1,7 +1,8 @@
 # Context-Aware Timewise VAEs for Real-Time Vehicle Trajectory Prediction
 
-Official implementation for _**Context-Aware Timewise VAEs for Real-Time Vehicle Trajectory Prediction**_. [[arXiv](https://arxiv.org/abs/2302.10873)][[YouTube](https://www.youtube.com/watch?v=wg6laeYpnW8)]
+Official implementation for _**Context-Aware Timewise VAEs for Real-Time Vehicle Trajectory Prediction**_.
 
+Accepted by _IEEE Robotics and Automation Letters_. [[arXiv](https://arxiv.org/abs/2302.10873)][[YouTube](https://www.youtube.com/watch?v=wg6laeYpnW8)]
 
 ![](https://pei-xu.github.io/projects/ContextVAE/teaser.png)
 
