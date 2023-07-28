@@ -119,3 +119,16 @@ To reproduce the testing results, please run
         --config config/waymo_eval.py --ckpt models/waymo_m2 \
         --rank 7 --workers 8 --master_addr <master_addr>
 
+
+## Citation
+
+    @article{contextvae2023,
+        title={Context-Aware Timewise {VAE}s for Real-Time Vehicle Trajectory Prediction},
+        author={Xu, Pei and Hayet, Jean-Bernard and Karamouzas, Ioannis},
+        journal={IEEE Robotics and Automation Letters},
+        year={2023},
+        volume={8},
+        number={9},
+        pages={5440-5447},
+        doi={10.1109/LRA.2023.3295990}
+    }
