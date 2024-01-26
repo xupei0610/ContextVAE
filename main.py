@@ -237,10 +237,10 @@ if __name__ == "__main__":
 
                     tic = time.time()
                     if config.clustering:
-                        if test_dataset.use_map:
+                        if model.use_map:
                             y_ = model(x, neighbor, *m, n_predictions=config.clustering)
                         else:
-                            y_ = [model(x, neighbor, *m, n_predictions=config.pred_samples) for _ in range(int(np.ceil(config.fpc/config.pred_samples)))]
+                            y_ = [model(x, neighbor, *m, n_predictions=config.pred_samples) for _ in range(int(np.ceil(config.clustering/config.pred_samples)))]
                             y_ = torch.cat(y_, 0)
                         # y_: n_samples x PRED_HORIZON x N x 2
                         cand = []
