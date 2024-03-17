@@ -22,7 +22,7 @@ Uncompress `nuScenes-map-expansion-v1.3.zip` into `<raw_dataset_folder>/map` fol
 #### Preprocessing
 Run command
 
-    $ python nuscenes.py <raw_dataset_folder> <target_dataset_folder>
+    $ python process_nuscenes.py <raw_dataset_folder> <target_dataset_folder>
 
 It will put training data into the folder of `<target_dataset_folder>/train`, evaluation data into `<target_dataset_folder>/val`, and map data into `<target_dataset_folder>/map`.
 
@@ -55,7 +55,7 @@ Uncompress downloaded data to `<raw_dataset_folder>`
 #### Preprocessing
 Run command
 
-    $ python lyft.py <raw_dataset_folder> <target_dataset_folder> --frameskip 2 --split 4
+    $ python process_lyft.py <raw_dataset_folder> <target_dataset_folder> --frameskip 2 --split 4
 
 It will split the data into 4 parts, and put training data into the folder of `<target_dataset_folder>/train`, evaluation data into `<target_dataset_folder>/validate` and map data into `<target_dataset_folder>/map`.
 
@@ -84,7 +84,7 @@ Download data to `<raw_dataset_folder>`
 #### Preprocessing
 Run command
 
-    $ python waymo.py <raw_dataset_folder> <target_dataset_folder> --frameskip 2 --split 8
+    $ python process_waymo.py <raw_dataset_folder> <target_dataset_folder> --frameskip 2 --split 8
 
 
 It will split the data into 8 parts, and put training data into the folder of `<target_dataset_folder>/training`, evaluation data into `<target_dataset_folder>/validation` and map data into `<target_dataset_folder>/map`.
